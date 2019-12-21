@@ -284,3 +284,27 @@ class BME280:
     hi = h // 1024
     hd = h * 100 // 1024 - hi * 100
     return "{}.{:02d}%".format(hi, hd)
+
+  @property
+  def raw_temperature(self):
+    "Return the temperature in degrees."
+    t = self.read_temperature()
+    ti = t // 100
+    td = t - ti * 100
+    return "{}.{:02d}".format(ti, td)
+
+  @property
+  def raw_pressure(self):
+    "Return the temperature in hPa."
+    p = self.read_pressure() // 256
+    pi = p // 100
+    pd = p - pi * 100
+    return "{}.{:02d}".format(pi, pd)
+
+  @property
+  def raw_humidity(self):
+    "Return the humidity in percent."
+    h = self.read_humidity()
+    hi = h // 1024
+    hd = h * 100 // 1024 - hi * 100
+    return "{}.{:02d}".format(hi, hd)
