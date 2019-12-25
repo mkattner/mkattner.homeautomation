@@ -56,11 +56,11 @@ except Exception as e:
 SWITCH_0_load = False
 if SWITCH_0_load == True:
   SWITCH_0 = machine.Pin(0, machine.Pin.OUT)
-  SWITCH_0_SET_TOPIC = b'homeassistant/switch/SWITCH_0/set'
-  SWITCH_0_CONFIG_TOPIC = b'homeassistant/switch/SWITCH_0/config'
+  SWITCH_0_SET_TOPIC      = b'homeassistant/switch/SWITCH_0/set'
+  SWITCH_0_CONFIG_TOPIC   = b'homeassistant/switch/SWITCH_0/config'
   SWITCH_0_CONFIG_PAYLOAD = b'{"name": "SWITCH_0", "command_topic": "homeassistant/switch/SWITCH_0/set", "state_topic": "homeassistant/switch/SWITCH_0/state"}'
-  SWITCH_0_STATE_TOPIC = b'homeassistant/switch/SWITCH_0/state'
-  SWITCH_0_STATE = b'OFF'
+  SWITCH_0_STATE_TOPIC    = b'homeassistant/switch/SWITCH_0/state'
+  SWITCH_0_STATE          = b'OFF'
 
   print('')
   print('PUBLISH')
@@ -85,9 +85,9 @@ if SWITCH_0_load == True:
 DS1820B_0_load = True
 if DS1820B_0_load == True:
   import onewire, ds18x20
-  DS1820B_0_CONFIG_TOPIC = b'homeassistant/sensor/DS1820B_0/config'
+  DS1820B_0_CONFIG_TOPIC   = b'homeassistant/sensor/DS1820B_0/config'
   DS1820B_0_CONFIG_PAYLOAD = b'{"device_class": "temperature", "name": "DS1820B_0_Temperature", "state_topic": "homeassistant/sensor/DS1820B_0/state", "unit_of_measurement": "°C", "value_template": "{{ value_json.temperature}}" }'
-  DS1820B_0_STATE_TOPIC = b'homeassistant/sensor/DS1820B_0/state'
+  DS1820B_0_STATE_TOPIC    = b'homeassistant/sensor/DS1820B_0/state'
 
   print('')
   print('PUBLISH')
@@ -113,11 +113,11 @@ if DS1820B_0_load == True:
 DHT11_0_load = False
 if DHT11_0_load == True:
   import dht
-  DHT11_0_CONFIG_TOPIC_T = b'homeassistant/sensor/DHT11_0_T/config'
-  DHT11_0_CONFIG_TOPIC_H = b'homeassistant/sensor/DHT11_0_H/config'
+  DHT11_0_CONFIG_TOPIC_T   = b'homeassistant/sensor/DHT11_0_T/config'
+  DHT11_0_CONFIG_TOPIC_H   = b'homeassistant/sensor/DHT11_0_H/config'
   DHT11_0_CONFIG_PAYLOAD_T = b'{"device_class": "temperature", "name": "DHT11_0_Temperature", "state_topic": "homeassistant/sensor/DHT11_0/state", "unit_of_measurement": "°C", "value_template": "{{ value_json.temperature}}" }'
   DHT11_0_CONFIG_PAYLOAD_H = b'{"device_class": "humidity", "name": "DHT11_0_Humidity", "state_topic": "homeassistant/sensor/DHT11_0/state", "unit_of_measurement": "%", "value_template": "{{ value_json.humidity}}" }'
-  DHT11_0_STATE_TOPIC = b'homeassistant/sensor/DHT11_0/state'
+  DHT11_0_STATE_TOPIC      = b'homeassistant/sensor/DHT11_0/state'
 
   print('')
   print('PUBLISH')
@@ -149,13 +149,13 @@ if BME_280_0_load == True:
   print('Humidity: ', hum)
   print('Pressure: ', pres)
 
-  BME280_0_CONFIG_TOPIC_T = b'homeassistant/sensor/BME280_0_T/config'
-  BME280_0_CONFIG_TOPIC_H = b'homeassistant/sensor/BME280_0_H/config'
-  BME280_0_CONFIG_TOPIC_P = b'homeassistant/sensor/BME280_0_P/config'
+  BME280_0_CONFIG_TOPIC_T   = b'homeassistant/sensor/BME280_0_T/config'
+  BME280_0_CONFIG_TOPIC_H   = b'homeassistant/sensor/BME280_0_H/config'
+  BME280_0_CONFIG_TOPIC_P   = b'homeassistant/sensor/BME280_0_P/config'
   BME280_0_CONFIG_PAYLOAD_T = b'{"device_class": "temperature", "name": "BME280_0_Temperature", "state_topic": "homeassistant/sensor/BME280_0/state", "unit_of_measurement": "°C", "value_template": "{{ value_json.temperature}}" }'
   BME280_0_CONFIG_PAYLOAD_H = b'{"device_class": "humidity", "name": "BME280_0_Humidity", "state_topic": "homeassistant/sensor/BME280_0/state", "unit_of_measurement": "%", "value_template": "{{ value_json.humidity}}" }'
   BME280_0_CONFIG_PAYLOAD_P = b'{"device_class": "pressure", "name": "BME280_0_Pressure", "state_topic": "homeassistant/sensor/BME280_0/state", "unit_of_measurement": "hPa", "value_template": "{{ value_json.pressure}}" }'
-  BME280_0_STATE_TOPIC = b'homeassistant/sensor/BME280_0/state'
+  BME280_0_STATE_TOPIC      = b'homeassistant/sensor/BME280_0/state'
 
   print('')
   print('PUBLISH')
