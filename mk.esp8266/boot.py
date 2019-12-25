@@ -28,7 +28,8 @@ mqtt_user = "mqtt"
 mqtt_password = "mqtt"
 mqtt_client_id = ubinascii.hexlify(machine.unique_id())
 
-
+#HOME ASSISTANT
+ha_prefix = "homeassistant/"
 
 
 ap_if = network.WLAN(network.AP_IF)
