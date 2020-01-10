@@ -10,12 +10,13 @@ import network
 import esp
 esp.osdebug(None)
 import gc
+import globals
 gc.collect()
 
 print();
 
-device_name = 'WNG1'
-print("START device " + device_name)
+
+print("START device " + globals.device_name)
 
 #WIFI
 wifi_ssid = 'stygs.com'
