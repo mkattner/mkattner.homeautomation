@@ -161,4 +161,12 @@ if globals.BME_280_0_load == True:
 
 
 import loop
-loop.run(client)
+
+try:
+
+  loop.run(client)
+
+except Exception as e:
+  print("EXCEPTION in loop")
+  print(e)
+  globals.restart_and_reconnect()
