@@ -4,30 +4,31 @@ import time, globals
 
 
 def run(client):
-  last_message_1s   = 0
-  last_message_5s   = 0
-  last_message_10s  = 0
-  last_message_20s  = 0
-  last_message_30s  = 0
-  last_message_60s  = 0
-  last_message_300s = 0
-  last_message_600s = 0
+  #receive time of last message for interval
+  lm_1s   = 0
+  lm_5s   = 0
+  lm_10s  = 0
+  lm_20s  = 0
+  lm_30s  = 0
+  lm_60s  = 0
+  lm_300s = 0
+  lm_600s = 0
 
   while True:
     # inizialize
     DS1820B_0_temp = 0
     try:
       client.check_msg()
-      if (time.time() - last_message_1s) > 1:
+      if (time.time() - lm_1s) > 1:
         # ________________________
         #     every 1 second
         # ------------------------
         print("every 1 second")
 
         # --- end 1 second
-        last_message_1s = time.time()
+        lm_1s = time.time()
       
-      if (time.time() - last_message_5s) > 5:
+      if (time.time() - lm_5s) > 5:
         # ________________________
         #     every 5 seconds
         # ------------------------
@@ -46,36 +47,36 @@ def run(client):
           client.publish(SWITCH_0_STATE_TOPIC, SWITCH_0_STATE)
         
         # --- end 5 second
-        last_message_5s = time.time()
+        lm_5s = time.time()
         
-      if (time.time() - last_message_10s) > 10:
+      if (time.time() - lm_10s) > 10:
         # ________________________
         #     every 10 seconds
         # ------------------------
         print("every 10 seconds");
 
         # --- end 10 second
-        last_message_10s = time.time()
+        lm_10s = time.time()
         
-      if (time.time() - last_message_20s) > 20:
+      if (time.time() - lm_20s) > 20:
         # ________________________
         #     every 20 seconds
         # ------------------------
         print("every 20 seconds");
 
         # --- end 20 second
-        last_message_20s = time.time()
+        lm_20s = time.time()
         
-      if (time.time() - last_message_30s) > 30:
+      if (time.time() - lm_30s) > 30:
         # ________________________
         #     every 30 seconds
         # ------------------------
         print("every 30 seconds");
 
         # --- end 30 second
-        last_message_30s = time.time()
+        lm_30s = time.time()
         
-      if (time.time() - last_message_60s) > 60:
+      if (time.time() - lm_60s) > 60:
         # ________________________
         #     every 60 seconds
         # ------------------------
@@ -114,25 +115,25 @@ def run(client):
 
 
         # --- end 60 second
-        last_message_60s = time.time()  
+        lm_60s = time.time()  
         
-      if (time.time() - last_message_300s) > 300:
+      if (time.time() - lm_300s) > 300:
         # ________________________
         #     every 300 seconds
         # ------------------------
         print("every 300 seconds");
         
         # --- end 300 second
-        last_message_300s = time.time()   
+        lm_300s = time.time()   
       
-      if (time.time() - last_message_600s) > 600:
+      if (time.time() - lm_600s) > 600:
         # ________________________
         #     every 600 seconds
         # ------------------------
         print("every 600 seconds");
         
         # --- end 600 second
-        last_message_600s = time.time()
+        lm_600s = time.time()
       
     except Exception as e:
       print("EXCEPTION in loop")
